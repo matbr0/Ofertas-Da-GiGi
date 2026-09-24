@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ofertas da Gigi</title>
+<meta name="description" content="Achadinhos que valem a pena! Confira as ofertas selecionadas pela Gigi.">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #17130f;
+    --bg-soft: #211b16;
+    --card: #241d18;
+    --card-border: #362c24;
+    --coral: #e8846c;
+    --coral-soft: #f2a98f;
+    --cream: #f7ede4;
+    --muted: #b8a99b;
+    --price-old: #8a7a6d;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(232,132,108,0.16), transparent 45%),
+      radial-gradient(circle at 90% 15%, rgba(232,132,108,0.10), transparent 40%),
+      var(--bg);
+    color: var(--cream);
+    font-family:'Nunito', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding: 48px 18px 64px;
+  }
+
+  .page{
+    width:100%;
+    max-width: 520px;
+  }
+
+  /* ---- Header ---- */
+  header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin-bottom: 38px;
+  }
+
+  .logo{
+    width: 118px;
+    height: 118px;
+    border-radius:50%;
+    object-fit:cover;
+    border: 3px solid var(--coral);
+    box-shadow: 0 0 0 6px rgba(232,132,108,0.12);
+  }
+
+  .brand{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+    font-size: 3rem;
+    line-height:1;
+    margin: 18px 0 2px;
+    color: var(--cream);
+  }
+
+  .brand em{
+    font-style:normal;
+    color: var(--coral-soft);
+  }
+
+  .tagline{
+    color: var(--coral-soft);
+    font-size: 0.98rem;
+    font-weight:600;
+    letter-spacing:0.2px;
+    margin: 2px 0 14px;
+  }
+
+  .trust-row{
+    display:flex;
+    gap: 14px;
+    flex-wrap:wrap;
+    justify-content:center;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight:700;
+  }
+  .trust-row span{
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+  .trust-row span::before{
+    content:"♥";
+    color: var(--coral);
+    font-size:0.85rem;
+  }
+
+  /* ---- Section label ---- */
+  .section-heading{
+    font-family:'Caveat', cursive;
+    font-size: 1.7rem;
+    color: var(--coral-soft);
+    text-align:center;
+    margin: 8px 0 20px;
+  }
+
+  /* ---- Product cards ---- */
+  .offers{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+
+  .offer-card{
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    position:relative;
+    transition: transform 0.18s ease, border-color 0.18s ease;
+  }
+
+  .offer-card:active{
+    transform: scale(0.98);
+  }
+
+  @media (hover:hover){
+    .offer-card:hover{
+      border-color: var(--coral);
+      transform: translateY(-3px);
+    }
+  }
+
+  .offer-image-wrap{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    overflow:hidden;
+    background:#0f0c0a;
+  }
+
+  .offer-image-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .offer-body{
+    padding: 16px 18px 20px;
+  }
+
+  .offer-title{
+    font-size: 1.02rem;
+    font-weight:800;
+    color: var(--cream);
+    margin: 0 0 10px;
+    line-height:1.3;
+  }
+
+  .price-row{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom: 14px;
+    flex-wrap:wrap;
+  }
+
+  .price-old{
+    font-size:0.85rem;
+    color: var(--price-old);
+    text-decoration: line-through;
+  }
+
+  .price-new{
+    font-size: 1.35rem;
+    font-weight:800;
+    color: var(--coral-soft);
+  }
+
+  .price-unit{
+    font-size:0.78rem;
+    color: var(--muted);
+    font-weight:700;
+  }
+
+  .cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background: var(--coral);
+    color: #1a1310;
+    font-weight:800;
+    font-size:0.92rem;
+    padding: 12px 16px;
+    border-radius: 999px;
+    letter-spacing:0.2px;
+  }
+
+  .cta::after{
+    content:"→";
+    font-weight:800;
+  }
+
+  /* ---- Footer ---- */
+  footer{
+    text-align:center;
+    margin-top: 44px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height:1.6;
+  }
+
+  footer .heart{
+    color: var(--coral);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <img class="logo" src="assets/logo.jpg" alt="Logo Ofertas da Gigi">
+    <h1 class="brand">Ofertas da <em>Gigi</em></h1>
+    <p class="tagline">Achadinhos que valem a pena! ♡</p>
+    <div class="trust-row">
+      <span>Produtos de qualidade</span>
+      <span>Entrega segura</span>
+      <span>Preços imperdíveis</span>
+    </div>
+  </header>
+
+  <p class="section-heading">Ofertas de hoje</p>
+
+  <div class="offers">
+
+    <a class="offer-card" href="https://s.shopee.com.br/6AlFWb6K6G" target="_blank" rel="noopener">
+      <div class="offer-image-wrap">
+        <img src="assets/produto1-escova.jpg" alt="Escova Elétrica de Limpeza 5 em 1" loading="lazy">
+      </div>
+      <div class="offer-body">
+        <p class="offer-title">Escova Elétrica de Limpeza 5 em 1</p>
+        <div class="price-row">
+          <span class="price-old">R$ 69,90</span>
+          <span class="price-new">R$ 31,60</span>
+        </div>
+        <div class="cta">Ver oferta na Shopee</div>
+      </div>
+    </a>
+
+    <a class="offer-card" href="https://s.shopee.com.br/80Cse54BHi" target="_blank" rel="noopener">
+      <div class="offer-image-wrap">
+        <img src="assets/produto2-potes.jpg" alt="Kit 10 Potes de Vidro 640ml Hermético Oliver Home" loading="lazy">
+      </div>
+      <div class="offer-body">
+        <p class="offer-title">Kit 10 Potes de Vidro 640ml Hermético com Tampa 4 Travas</p>
+        <div class="price-row">
+          <span class="price-new">R$ 11,78</span>
+          <span class="price-unit">a unidade</span>
+        </div>
+        <div class="cta">Ver oferta na Shopee</div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>Feito com <span class="heart">♥</span> por Ofertas da Gigi</p>
+    <p>Novas ofertas toda semana</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
